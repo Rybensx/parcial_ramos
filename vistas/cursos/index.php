@@ -15,7 +15,7 @@
         <h1 class="text-center">Formulario de Ingreso de informacion de los curos impartidos en la Escuela de informatica y Ciberdefensa</h1>
         <div class="row justify-content-center">
             
-            <form action="/Practica_no.7/controladores/estudiantes/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/parcial_ramos/controladores/cursos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
 
                 <div class="row mb-3">
                     <div class="col">
