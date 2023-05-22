@@ -5,13 +5,13 @@ abstract class Conexion{
 
     private static function conectar(){
         try{
-            //CONEXION A LA BD DE INFORMIX EN DOCKER 
+            //conexion a la base de datos de informix 
             self::$conexion = new PDO('informix:host=host.docker.internal; service=9088; database=parcial_ramos; server=informix; protocol=onsoctcp;EnableScrollableCursors = 1','informix','in4mix'); 
-            // DEFINIR EL MANEJO DE EXCEPCIONES
+            // definir las exepciones
             self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // echo "CONECTADO";
         }catch(PDOException $e){
-            // IMPRIME EN PANTALLA EL ERROR
+            // mensaje de error
             echo "Error de conexion de BD";
             echo "<br>";
             echo $e->getMessage();
@@ -22,30 +22,30 @@ abstract class Conexion{
     }
 
     public static function ejecutar($sql){
-        // CONECTANDOSE A LA BD CON EL METODO CONECTAR
+        // conexion a la base de datos 
         self::conectar();
-        // PREPARAMOS LA SENTENCIA
+        // dictamos la sentencia
         $sentencia = self::$conexion->prepare($sql);
-        // EJECUTAMOS A SENTENCIA
+        // ejecutamos la sentencia
         $resultado = $sentencia->execute();
-        // CERRANDO LA CONEXION
+        // finalizaos la conexion
         self::$conexion = null;
-        // DEVOLVEMOS RESULTADOS
+        // retornamos resultados
         return $resultado;
     }
 
     public static function servir($sql){
-        // CONECTANDOSE A LA BD CON EL METODO CONECTAR
+        // conexion a la base de datos con el metodo conectar
         self::conectar();
-        // PREPARAMOS LA SENTENCIA
+        // dictamos la sentencia
         $sentencia = self::$conexion->prepare($sql);
-        // EJECUTAMOS A SENTENCIA
+        // ejecutamos la sentencia
         $sentencia->execute();
         $resultados = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-        // CERRANDO LA CONEXION
+        // finalizamos la conexion
         self::$conexion = null;
-        // DEVOLVEMOS RESULTADOS
+        // retornamos los resultados
         return $resultados;
     }
 }

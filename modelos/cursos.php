@@ -1,7 +1,7 @@
 <?php
 require 'Conexion.php';
 
-class Producto extends Conexion{
+class Curso extends Conexion{
     public $curso_id;
     public $curso_nombre;
     public $curso_periodos;

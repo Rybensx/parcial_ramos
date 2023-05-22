@@ -4,8 +4,8 @@
 require '../../modelos/cursos.php';
 
 try {
-    $producto = new Producto($_POST);
-    $resultado = $producto->guardar();
+    $curso = new Curso($_POST);
+    $resultado = $curso->guardar();
     $error = "NO se guardó correctamente";
 } catch (PDOException $e) {
     $error = $e->getMessage();
