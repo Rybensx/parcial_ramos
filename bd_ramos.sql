@@ -1,4 +1,4 @@
-create table Curso (
+create table cursos (
     curso_id serial not null,
     curso_nombre VARCHAR(100) not null,
     curso_periodos INTEGER not null,
