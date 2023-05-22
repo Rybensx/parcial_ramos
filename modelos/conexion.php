@@ -6,7 +6,7 @@ abstract class Conexion{
     private static function conectar(){
         try{
             //conexion a la base de datos de informix 
-            self::$conexion = new PDO('informix:host=host.docker.internal; service=9088; database=cursos; server=informix; protocol=onsoctcp;EnableScrollableCursors = 1','informix','in4mix'); 
+            self::$conexion = new PDO('informix:host=host.docker.internal; service=9088; database=parcial_ramos; server=informix; protocol=onsoctcp;EnableScrollableCursors = 1','informix','in4mix'); 
             // definir las exepciones
             self::$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // echo "CONECTADO";
