@@ -41,7 +41,7 @@ try {
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/parcial_ramos/vistas/cursoss/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/parcial_ramos/vistas/cursos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
